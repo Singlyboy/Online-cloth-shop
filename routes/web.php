@@ -34,8 +34,8 @@ Route::get('/add-to-cart/{p_id}',[FrontendOrderController::class,'addToCart'])->
 Route::get('/cart-view',[FrontendOrderController::class,'viewCart'])->name('cart.view');
 Route::get('/cart/item/delete/{id}',[FrontendOrderController::class,'cartItemDelete'])->name('cart.item.delete');
 
-Route::get('/checkout',[FrontendOrderController::class,'checkout'])->name('checkout');
 
+Route::get('/checkout',[FrontendOrderController::class,'checkout'])->name('checkout');
 Route::post('/place-order',[FrontendOrderController::class,'placeOrder'])->name('order.place');
 Route::get('/view-profile',[FrontendCustomerController::class,'viewProfile'])->name('view.profile');
 Route::get('/view-invoice/{id}',[FrontendOrderController::class,'viewInvoice'])->name('view.invoice');

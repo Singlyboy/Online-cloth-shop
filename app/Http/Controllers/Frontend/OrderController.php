@@ -141,7 +141,7 @@ public function placeOrder(Request $request)
     session()->forget('cart');
     notify()->success('Order Place Success.');
 
-    return redirect()->route('homepage');
+    return redirect()->route('view.profile');
 }
 
 

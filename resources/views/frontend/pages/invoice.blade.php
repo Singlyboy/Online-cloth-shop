@@ -84,15 +84,24 @@
                                         <td class="pl0">{{$item->product->product_name}}</td>
                                         <td class="text-center">{{$item->unit_price}}</td>
                                         <td class="text-center">{{$item->quanity}}</td>
-                                        <td class="text-end">{{$item->subtotal}}</td>
+                                        <td class="text-end">{{$item->subtotal}} BDT</td>
                                     </tr>
                                     @endforeach
                                     <tr class="tr2">
                                         <td></td>
+                                        
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-center f-w-600 active-color">Shiping</td>
+                                        <td class="f-w-600 text-end active-color">70 BDT</td>
+                                    </tr>
+                                    <tr class="tr2">
+                                        <td></td>
+                                        
                                         <td></td>
                                         <td></td>
                                         <td class="text-center f-w-600 active-color">Grand Total</td>
-                                        <td class="f-w-600 text-end active-color">{{$order->total_amount}}</td>
+                                        <td class="f-w-600 text-end active-color">{{$order->total_amount}} BDT</td>
                                     </tr>
                                     </tbody>
                                 </table>
