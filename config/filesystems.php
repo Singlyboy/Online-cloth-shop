@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => env('FILESYSTEM_DISK', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,8 +39,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path('/'),
-            'url' => env('APP_URL').'/',
+            'root' => public_path('/backend/images/uploads'),
+            'url' => env('APP_URL').'/backend/images/uploads',
             'visibility' => 'public',
             'throw' => false,
         ],

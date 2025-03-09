@@ -223,6 +223,28 @@ public function placeOrder(Request $request)
         return view('frontend.pages.invoice',compact('order'));
     }
 
+    public function updateCart(Request $request, $id)
+    {
+        $cart = session()->get('cart');
+        $product = Product::find($id);
+    
+        // Ensure quantity is at least 1
+        $quantity = max(1, $request->quantity);
+    
+        if ($product->stock >= $quantity) {
+            $cart[$id]['quantity'] = $quantity;
+            $cart[$id]['subtotal'] = $quantity * $cart[$id]['selling_price'];
+    
+            session()->put('cart', $cart);
+            notify()->success('Cart updated.');
+        } else {
+            notify()->error('Stock not available');
+        }
+    
+        return redirect()->back();
+    }
+    
+
 
 
 }

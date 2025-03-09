@@ -44,7 +44,7 @@
 
 @include('frontend.fixed.header')
 
-
+@include('notify::components.notify')
 
 @if(request()->is('/'))
 @include('frontend.fixed.sidebar')

@@ -73,7 +73,7 @@ class ProductController extends Controller
 
         ]);
         notify()->success('Product Added Successfully');
-         return redirect()->back();
+         return redirect()->route('products');
     }
 
     public function ProductDelete($id){
