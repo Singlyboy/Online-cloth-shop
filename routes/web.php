@@ -32,6 +32,7 @@ Route::get('/product/view/{id}',[FrontendProductController::class,'productView']
 Route::get('/add-to-cart/{p_id}',[FrontendOrderController::class,'addToCart'])->name('add.to.cart');
 
 Route::get('/cart-view',[FrontendOrderController::class,'viewCart'])->name('cart.view');
+Route::put('/update-cart/{partsid}',[FrontendOrderController::class,'updateCart'])->name('update.cart');
 Route::get('/cart/item/delete/{id}',[FrontendOrderController::class,'cartItemDelete'])->name('cart.item.delete');
 
 Route::get('/checkout',[FrontendOrderController::class,'checkout'])->name('checkout');
@@ -103,7 +104,7 @@ Route::group(['middleware'=>'auth'],function(){
         Route::post('/order-status/{o_id}',[OrderController::class,'orderStatus'])->name('order.status');
 
 
-        Route::get('/customers',[CustomerController::class,'Customers'])->name('customers');
+        Route::get('/customers',[CustomerController::class,'customers'])->name('customers');
         //report
        
         Route::get('/report',[ReportController::class,'report'])->name('report.list');
