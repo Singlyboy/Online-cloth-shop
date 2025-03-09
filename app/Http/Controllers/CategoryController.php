@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class CategoryController extends Controller
 {
     public function Categories(){
-        $cat = Category::with('parent')->paginate(3); 
+        $cat = Category::with('childs')->paginate(10); 
         return view('backend.category.categories', compact('cat'));
     }
     
@@ -46,7 +46,7 @@ class CategoryController extends Controller
         ]);
 
         notify()->success('Category Created Successfully.');
-return redirect()->back();
+        return redirect()->route('categories');
     }
 }
 

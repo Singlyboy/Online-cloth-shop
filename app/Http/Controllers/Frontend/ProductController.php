@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function products(){
-        $pro=Product::paginate(3);
+        $pro=Product::paginate(20);
         return view('frontend.pages.products',compact('pro'));
     }
 

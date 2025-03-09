@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>DISEE - Invoice HTML5 Template</title>
+    <title>Online clothing store</title>
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
     <meta charset="UTF-8">
 
@@ -48,10 +48,10 @@
                                     <div class="invoice-number mb-30">
                                         <div class="invoice-number-inner">
                                             <h4 class="inv-title-1">Invoice From</h4>
-                                            <h2 class="name">Susmita Dhar</h2>
+                                            <h2 class="name">E Shopper</h2>
                                             <p class="invo-addr-1">
-                                                Susmita Enterprise  <br/>
-                                                Email:Susmita@gmail.com <br/>
+                                                    E Shopper  <br/>
+                                                Email:eshopper@gmail.com <br/>
                                                 Uttara, Dhaka, Bangladesh <br/>
                                                 Mobile: 016000000000<br/>
                                             </p>

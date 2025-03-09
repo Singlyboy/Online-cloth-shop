@@ -22,8 +22,8 @@
     <tr>
       <th scope="col">id</th>
       <th scope="col">Receiver Name</th>     
-      <th scope="col">customer Number</th>
       <th scope="col">customer Name</th>
+      <th scope="col">customer Number</th>
       <th scope="col">Total Amount</th>
       <th scope="col">payment_type</th>
       <th scope="col">order_status</th>
