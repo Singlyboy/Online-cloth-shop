@@ -18,52 +18,41 @@ use App\Http\Controllers\ReportController;
 
 //website's routes
 
-        Route::get('/',[FrontendHomeController::class,'home'])->name('homepage');
+Route::get('/',[FrontendHomeController::class,'home'])->name('homepage');
 
-        Route::get('/registration',[FrontendCustomerController::class,'registration'])->name('registration');
-        Route::post('/registration-submit',[FrontendCustomerController::class,'registrationSubmit'])->name('registration.submit');
-        Route::post('/customer-login',[FrontendCustomerController::class,'customerLogin'])->name('customer.login');
-        Route::get('/customer-logout',[FrontendCustomerController::class,'customerLogout'])->name('customer.logout');
-
-
-        Route::get('/products',[FrontendProductController::class,'products'])->name('products.list');
-        Route::get('/product/view/{id}',[FrontendProductController::class,'productView'])->name('product.view');
-
-        Route::get('/add-to-cart/{p_id}',[FrontendOrderController::class,'addToCart'])->name('add.to.cart');
-
-        Route::get('/cart-view',[FrontendOrderController::class,'viewCart'])->name('cart.view');
-        Route::put('/update-cart/{partsid}',[FrontendOrderController::class,'updateCart'])->name('update.cart');
-        Route::get('/cart/item/delete/{id}',[FrontendOrderController::class,'cartItemDelete'])->name('cart.item.delete');
+Route::get('/registration',[FrontendCustomerController::class,'registration'])->name('registration');
+Route::post('/registration-submit',[FrontendCustomerController::class,'registrationSubmit'])->name('registration.submit');
+Route::post('/customer-login',[FrontendCustomerController::class,'customerLogin'])->name('customer.login');
+Route::get('/customer-logout',[FrontendCustomerController::class,'customerLogout'])->name('customer.logout');
 
 
-       
+Route::get('/products',[FrontendProductController::class,'products'])->name('products.list');
+Route::get('/product/view/{id}',[FrontendProductController::class,'productView'])->name('product.view');
+Route::get('/product-under-category/{category_id}',[FrontendHomeController::class,'productUnderCategory'])->name('product.under.category');
+Route::get('/search', [FrontendHomeController::class, 'search'])->name('search');
+Route::get('/add-to-cart/{p_id}',[FrontendOrderController::class,'addToCart'])->name('add.to.cart');
+
+Route::get('/cart-view',[FrontendOrderController::class,'viewCart'])->name('cart.view');
+Route::put('/update-cart/{partsid}',[FrontendOrderController::class,'updateCart'])->name('update.cart');
+Route::get('/cart/item/delete/{id}',[FrontendOrderController::class,'cartItemDelete'])->name('cart.item.delete');
 
 
-        //Customer Middleware
-
-
-Route::group(['middleware' => 'customer_auth'], function () {
-
-                Route::get('/checkout',[FrontendOrderController::class,'checkout'])->name('checkout');
-                Route::post('/place-order',[FrontendOrderController::class,'placeOrder'])->name('order.place');
-                Route::get('/view-profile',[FrontendCustomerController::class,'viewProfile'])->name('view.profile');
-                Route::get('/view-invoice/{id}',[FrontendOrderController::class,'viewInvoice'])->name('view.invoice');
-                Route::get('/order-cancel/{order_id}',[FrontendCustomerController::class,'cancelOrder'])->name('cancel.order');
-
-
-});
+Route::get('/checkout',[FrontendOrderController::class,'checkout'])->name('checkout');
+Route::post('/place-order',[FrontendOrderController::class,'placeOrder'])->name('order.place');
+Route::get('/view-profile',[FrontendCustomerController::class,'viewProfile'])->name('view.profile');
+Route::get('/view-invoice/{id}',[FrontendOrderController::class,'viewInvoice'])->name('view.invoice');
+Route::get('/order-cancel/{order_id}',[FrontendCustomerController::class,'cancelOrder'])->name('cancel.order');
 
 
 
 
 
+//ssl commerz
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
-        //ssl commerz
-        Route::post('/success', [SslCommerzPaymentController::class, 'success']);
-        Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
-        Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
-        Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
 

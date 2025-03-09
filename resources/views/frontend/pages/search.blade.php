@@ -1,8 +1,8 @@
+
 @extends('frontend.master')
 
 
 @section('content')
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
@@ -124,11 +124,14 @@
             <!-- Shop Product Start -->
             <div class="col-lg-9 col-md-12">
                 <div class="row pb-3">
+                <p>
+    {{ $products->count() }} items found for "{{ request()->search_key }}"
+</p>
+               
                     
+                    @foreach($products as $data)
                     
-                    @foreach($pro as $data)
-                    
-                    <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
     <div class="card product-item border-0 mb-4">
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <img class="img-fluid w-100" src="{{url('/backend/images/uploads/'.$data->image)}}" alt="" width="500px">
@@ -179,14 +182,7 @@
 </div>
 
                     @endforeach
-                   
-
-
-
-
-                    
-                    {{$pro->links()}}
-                  
+                            
  
                 
                    

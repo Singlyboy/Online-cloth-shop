@@ -81,6 +81,51 @@ class ProductController extends Controller
       notify()->success('Product deleted successfully');
       return redirect()->back();
     }
-   
+    public function Productedit($id)
+    {
+
+        $product=Product::find($id);
+        $allCategory=Category::all();
+        $allBrands = Brand::all();
+        return view('backend.product.product-edit',compact('allCategory','product','allBrands'));
+    }
+    public function ProductUpdate(Request $request,$id)
+    {
+       
+        $validation=Validator::make($request->all(),
+        [
+           
+
+       'p_category'=>'required',
+        'p_brand' => 'required',
+        'prod_name'=>'required',
+        'par_stock'=>'required|numeric|min:1',
+        'par_discount'=>'nullable|numeric|min:1',           
+        'description'=>'required',
+        'buy_price'=>'required',
+        'sell_price'=>'required'
+            
+        ]);
+
+
+        //query
+        $product=Product::find($id);
+        $product->update([
+         'category_id'=>$request->p_category,
+         'brand_id' => $request->p_brand,
+         'product_name'=>$request->prod_name,
+         'description'=>$request->description,
+         'status'=>$request->status,
+         'buying_price'=>$request->buy_price,
+         'selling_price'=>$request->sell_price,
+         'discount'=>$request->par_discount,
+         'stock'=>$request->par_stock
+        ]);
+      
+        notify()->success('Product updated successfully.');
+        return redirect()->route('products');
+
+
+    }
     
 }
