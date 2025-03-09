@@ -25,7 +25,7 @@
       <th scope="col">Mobile Number</th>
       <th scope="col">Address</th>
      
-      <th scope="col">Action</th>
+      <th scope="col">Status</th>
 
     </tr>
   </thead>
@@ -37,11 +37,10 @@
       <td>{{$customer->email}}</td>
       <td>{{$customer->phone_number}}</td>
       <td>{{$customer->address}}</td>
-      <td>{{$customer->email}}</td>
-           <td>
-        <a class="btn btn-primary" href="#">View</a>
-       
-      </td>
+      <td>{{$customer->status}}</td>
+     
+     
+          
     </tr>
     @endforeach
   </tbody>

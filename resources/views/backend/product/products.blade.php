@@ -59,9 +59,14 @@
       <td>{{$data->stock}}</td>
      
       <td>
-        <a href="{{route('product.update',$data->id)}}" class="btn btn-primary">Edit</a> <br>
-        <a href="{{route('product.delete',$data->id)}}" class="btn btn-danger">Delete</a>
-      </td>
+    <a href="{{route('product.update',$data->id)}}" class="btn btn-primary btn-sm">
+        <i class="fas fa-edit"></i>
+    </a>
+    <a href="{{route('product.delete',$data->id)}}" class="btn btn-danger btn-sm">
+        <i class="fas fa-trash"></i>
+    </a>
+</td>
+
     </tr>
     @endforeach
   </tbody>
