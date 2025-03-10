@@ -43,13 +43,13 @@ Route::post('/place-order',[FrontendOrderController::class,'placeOrder'])->name(
 Route::get('/view-profile',[FrontendCustomerController::class,'viewProfile'])->name('view.profile');
 Route::get('/view-invoice/{id}',[FrontendOrderController::class,'viewInvoice'])->name('view.invoice');
 Route::get('/order-cancel/{order_id}',[FrontendCustomerController::class,'cancelOrder'])->name('cancel.order');
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 
 });
 
 
 
 //ssl commerz
-Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
@@ -80,6 +80,7 @@ Route::group(['middleware'=>'auth'],function(){
         Route::get('/categories',[CategoryController::class,'Categories'])->name('categories');
         Route::get('/category-create',[CategoryController::class,'CategoryCreate'])->name('category.create');
         Route::post('/category-store',[CategoryController::class,'CategoryStore'])->name('category.store');
+        Route::get('/category-delete/{c_id}',[CategoryController::class,'CategoryDelete'])->name('category.delete');
 
 
         Route::get('/sub-categories',[SubCategoryController::class,'SubCategories'])->name('sub.categories');
@@ -99,6 +100,7 @@ Route::group(['middleware'=>'auth'],function(){
         Route::get('/brands',[BrandController::class,'Brands'])->name('brands');
         Route::get('/brand-create',[BrandController::class,'BrandCreate'])->name('brand.create');
         Route::post('/brand-store',[BrandController::class,'BrandStore'])->name('brand.store');
+        Route::get('/brand-del/{b_id}',[BrandController::class,'Brand_del'])->name('brand.delete');
 
 
         Route::get('/orders',[OrderController::class,'Orders'])->name('order.list');

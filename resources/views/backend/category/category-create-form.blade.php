@@ -34,10 +34,10 @@
             <label for="exampleInputPassword1">Description</label>
             <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="Enter Description" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="exampleInputPassword1">Image</label>
             <input type="file" name="image" class="form-control" id="exampleInputPassword1" placeholder="Enter an image file">
-        </div>
+        </div> -->
 
         <br>
         <button type="submit" class="btn btn-primary active">Submit</button>

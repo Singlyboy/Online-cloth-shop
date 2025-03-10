@@ -8,7 +8,7 @@ use App\Models\Brand;
 class BrandController extends Controller
 {
     public function Brands(){
-        $brand=Brand::paginate(2);
+        $brand=Brand::paginate(10);
         return view('backend.brand.brands',compact('brand'));
     }
     public function BrandCreate(){
@@ -21,6 +21,16 @@ class BrandController extends Controller
         'description'=>$request->description,
         'image'=>$request->image
        ]);
-       return redirect()->back();
+
+       notify()->success('Brand Created');
+       return redirect()->route('brands');
+    }
+
+    public function Brand_del($b_id){
+        $brand = Brand::find($b_id);
+        $brand -> delete();
+        notify()->error('Brand Deleted');
+        return redirect()->back();
+
     }
 }

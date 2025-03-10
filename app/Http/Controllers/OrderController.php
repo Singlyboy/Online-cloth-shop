@@ -9,7 +9,7 @@ class OrderController extends Controller
 {
     public function Orders(){
 
-        $allOrders = Order::with('customer')->orderBy('created_at', 'desc')->paginate(10); 
+        $allOrders = Order::with('customer')->orderBy('created_at', 'desc')->paginate(20); 
             return view('backend.order.orders', compact('allOrders'));
        
     }

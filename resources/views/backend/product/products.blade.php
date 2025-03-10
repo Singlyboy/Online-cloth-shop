@@ -22,11 +22,11 @@
   <thead>
     <tr>
       <th scope="col">id</th>
+      <th scope="col">image</th>
       <th scope="col">Category_name</th>
       <th scope="col">Brand_name</th>
       <th scope="col">product_name</th>
       <th scope="col">description</th>
-      <th scope="col">image</th>
       <th scope="col">status</th>
       <th scope="col">buying_price</th>
       <th scope="col">selling_price</th>
@@ -41,16 +41,17 @@
     <tr>
       <td>{{$data->id}}</td>
       <td>
-      <a href="javascript:void(0);">{{ optional($data->category)->name }}</a>
+        <img src="{{url('/backend/images/uploads/backend/images/uploads/'.$data->image)}}" alt="" width=100px>
+      </td>
+      <td>
+      <h6>{{ optional($data->category)->name }}</h6>
 
       </td>
       <td>{{ optional($data->brand)->name }}</td>     <!-- Brand name -->
 
       <td>{{$data->product_name}}</td>
       <td>{{$data->description}}</td>
-      <td>
-        <img src="{{url('/backend/images/uploads/'.$data->image)}}" alt="" width=100px>
-      </td>
+     
       <td>{{$data->status}}</td>
       <td>{{$data->buying_price}}</td>
       <td>{{$data->selling_price}}</td>
@@ -59,9 +60,9 @@
       <td>{{$data->stock}}</td>
      
       <td>
-    <a href="{{route('product.update',$data->id)}}" class="btn btn-primary btn-sm">
+    <!-- <a href="{{route('product.update',$data->id)}}" class="btn btn-primary btn-sm">
         <i class="fas fa-edit"></i>
-    </a>
+    </a> -->
     <a href="{{route('product.delete',$data->id)}}" class="btn btn-danger btn-sm">
         <i class="fas fa-trash"></i>
     </a>

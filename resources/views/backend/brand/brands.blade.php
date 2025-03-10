@@ -17,13 +17,14 @@
 
        <a href="{{route('brand.create')}}"  class="btn btn-primary">Create Brand</a><br>
 
-       <table class="table table-bordered">
+<div class="col-lg-6">
+  <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">id</th>
       <th scope="col">name</th>
       <th scope="col">description</th>
-      <th scope="col">image</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -32,12 +33,16 @@
       <td>{{$data->id}}</td>
       <td>{{$data->name}}</td>
       <td>{{$data->description}}</td>
-      <td>{{$data->image}}</td>
+      <td>
+        <a href="{{route('brand.delete',$data->id)}}" class="btn btn-danger btn-sm">
+          <i class="fas fa-trash"></i>
+         </a>
+      </td>
     </tr>
     @endforeach
   </tbody>
 </table>  
-
+</div>
 <div>  
 {{$brand->links()}}
 @endsection

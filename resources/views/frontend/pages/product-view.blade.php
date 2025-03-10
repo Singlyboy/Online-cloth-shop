@@ -7,7 +7,7 @@
     <div class="container-fluid py-5">
         <div class="row px-xl-5">
             <div class="col-lg-5 pb-5">
-            <img class="w-100 h-100" src="{{url('/backend/images/uploads/'.$singleProduct->image)}}" alt="Image">
+            <img class="w-100 h-100" src="{{url('/backend/images/uploads/backend/images/uploads/'.$singleProduct->image)}}" alt="Image">
             </div>
 
             <div class="col-lg-7 pb-5">

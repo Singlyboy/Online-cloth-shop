@@ -48,6 +48,18 @@ class CategoryController extends Controller
         notify()->success('Category Created Successfully.');
         return redirect()->route('categories');
     }
+
+
+    public function CategoryDelete($c_id){
+
+        $cat = Category::find($c_id);
+        $cat->delete();
+
+        notify()->error('Category Deleted Successfully.');
+        return redirect()->back();
+
+
+    }
 }
 
     
