@@ -25,14 +25,14 @@
                                 <a href="" class="dropdown-item">Women's Tops</a>
                             </div>
                         </div> 
-                        <div class="nav-item dropdown">
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Kids's Collection <i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
                                 <a href="" class="dropdown-item">Kid's Dresses</a>
                                 <a href="" class="dropdown-item">Kid's Sarees</a>
                                 <a href="" class="dropdown-item">Kid's Shirts</a>
                             </div>
-                        </div>      
+                        </div>       -->
                     </div>
                     
                 </nav>
@@ -51,29 +51,31 @@
                             <a href="{{route('homepage')}}" class="nav-item nav-link active">Home</a>
                             <a href="{{route('products.list')}}" class="nav-item nav-link">Products</a>
                             
-                            <div class="nav-item dropdown">
+                            <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mens</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="cart.html" class="dropdown-item">Mens Shirts</a>
                                     <a href="checkout.html" class="dropdown-item">Mens Pants</a>
                                 </div>
-                            </div>
-                            <div class="nav-item dropdown">
+                            </div> -->
+
+                            <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Womens</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="cart.html" class="dropdown-item">Womens Dress</a>
                                     <a href="checkout.html" class="dropdown-item">Womens Sarees</a>
                                 </div>
-                            </div>
-                            <div class="nav-item dropdown">
+                            </div> -->
+
+                            <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kid's</a>
                                 <div class="dropdown-menu rounded-0 m-0">
                                     <a href="cart.html" class="dropdown-item">Kids Shirts</a>
                                     <a href="checkout.html" class="dropdown-item">Kids Dress</a>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             
