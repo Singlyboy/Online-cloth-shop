@@ -46,7 +46,7 @@
           <div class="card-body p-4">
             <div class="row d-flex justify-content-between align-items-center">
               <div class="col-md-2 col-lg-2 col-xl-2">
-                <img src="{{url('/backend/images/uploads/'.$data['image'])}}" class="img-fluid rounded-3" alt="Product Image" width="100px">
+                <img src="{{url('/backend/images/uploads/backend/images/uploads/'.$data['image'])}}" class="img-fluid rounded-3" alt="Product Image" width="100px">
               </div>
               <div class="col-md-3 col-lg-3 col-xl-3">
                 <p class="lead fw-normal mb-2">{{$data['product_name']}}</p>
